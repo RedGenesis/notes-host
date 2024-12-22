@@ -1,18 +1,22 @@
 const mongoose = require('mongoose');
 
-mongoose.set('strictQuery', false);
+// The responsibility of establishing the connection to the database has been
+// givien to the app.js module.  The note.js file under the models directory only
+// defines the Mongoose schema for notes.
 
-const url = process.env.MONGODB_URI;
+// mongoose.set('strictQuery', false);
 
-console.log('connecting to', url);
+// const url = process.env.MONGODB_URI;
 
-mongoose.connect(url)
-    .then(result => {
-        console.log('connected to MongoDB')
-    })
-    .catch(error => {
-        console.log('error connecting to MongoDB:', error.message);
-    });
+// console.log('connecting to', url);
+
+// mongoose.connect(url)
+//     .then(result => {
+//         console.log('connected to MongoDB')
+//     })
+//     .catch(error => {
+//         console.log('error connecting to MongoDB:', error.message);
+//     });
     
 const noteSchema = new mongoose.Schema({
     content: {
